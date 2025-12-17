@@ -1,8 +1,5 @@
-# Завдання 2: Генератор хешів файлів
-
-from hashlib import sha256 
-# "missing_file.txt" - для перевірки помилки.
 file_paths = ["apache_logs.txt", "missing_file.txt"]
+from hashlib import sha256 
 
 def generate_file_hashes(*file_paths):
     dic_hashes = {}
@@ -20,8 +17,8 @@ def generate_file_hashes(*file_paths):
             print(f"An undefined error has occurred: '{path}' -> {e}")
             
     return dic_hashes
+    
+hashes = generate_file_hashes(*file_paths)
 
-if __name__ == "__main__":
-    hashes = generate_file_hashes(*file_paths)
-    print("results: (path: hash):")
-    print(hashes)
+print("\nResults (path: hash):")
+print(hashes)
